@@ -7,37 +7,50 @@ An executive-level interactive Power BI dashboard designed to provide end-to-end
 ## 📸 Dashboard Overview
 
 ### Page 1: Executive Overview
-![Overview](images/Superstore_Executive_Intelligence_Hub-1.png)
+![Overview](images/Superstore_Executive_Intelligence_Hub-1.jpg)
+*Provides a high-level snapshot of overall business performance, featuring multi-year sales & profit trends, regional metrics, category-level breakdowns, and core KPI cards.*
 
 ### Page 2: Product & Discount Analysis
-![Product Analysis](images/Superstore_Executive_Intelligence_Hub-2.png)
+![Product Analysis](images/Superstore_Executive_Intelligence_Hub-2.jpg)
+*Deep-dives into product-level performance, showcasing top profit-generating items, loss-making product identification, discount vs. profit margin elasticity, and shipping mode distribution.*
 
 ### Page 3: Customer & Return Risk Deep-Dive
-![Customer & Returns](images/Superstore_Executive_Intelligence_Hub-3.png)
+![Customer & Returns](images/Superstore_Executive_Intelligence_Hub-3.jpg)
+*Analyzes customer value behavior across market segments, top-performing accounts, and operational return risks integrated via custom 3-tier risk grading.*
 
 ---
 
-## 🔑 Key Features & Insights
+## 🔑 Key Performance Indicators & Metrics (Overview Page)
 
-* **Financial Tracking:** Dynamic monitoring of Sales, Profit Margin %, and Order Volumes across multi-year trends.
-* **Product Efficiency:** Scatter plot analysis evaluating Discount vs. Profit Margin to identify value-destroying discount strategies.
-* **Customer Value:** High-value customer identification with conditional formatting for risk and profitability.
-* **Return Risk Analysis:** Tree map visualization using custom 3-tier gradient formatting (Teal / Amber / Coral) to pinpoint high-return regions and sub-categories.
-
----
-
-## 🛠️ Technical Specifications
-
-* **Data Modeling:** Star Schema architecture with bidirectional filtering between `Orders` and `Returns`.
-* **DAX Measures:** Calculated custom measures for `Profit Margin %`, `Return Rate %`, and `Total Returned`.
-* **Design Standards:** Muted color palette (`#2A9D8F`, `#E9C46A`, `#E76F51`), locked layout grid, and seamless page navigation.
+* **Total Sales:** $2.33M
+* **Total Profit:** $292.30K
+* **Overall Profit Margin:** 12.56%
+* **Net Orders:** 5K
+* **Total Quantity Sold:** 39K
+* **Total Returned Orders:** 296
+* **Overall Return Rate:** 5.79%
 
 ---
 
-## 📂 Project Structure
+## 🛠️ Technical Implementation & Architecture
+
+* **Data Modeling:** Built on a robust Star Schema architecture connecting `Orders` and `Returns` tables with bidirectional filtering configuration to ensure accurate cross-filtering and metric calculations.
+* **Advanced DAX Measures:** 
+  * Custom calculation for `Profit Margin %` and dynamic `Return Rate %` using `DIVIDE` and `CALCULATE` functions to handle complex relational contexts.
+* **Conditional Formatting & UI/UX Standards:**
+  * Implemented a 3-tier gradient and rule logic for return risks (Teal `< 5%` for Low Risk, Amber `5%-10%` for Moderate Risk, and Coral `> 10%` for High Risk).
+  * Locked spatial layouts using Power BI selection panes to maintain visual consistency across pages.
+  * Cohesive executive color palette: Teal (`#2A9D8F`), Amber (`#E9C46A`), and Coral (`#E76F51`).
+
+---
+
+## 📂 Project Repository Structure
 
 ```text
-├── dataset/                    # Sample Superstore dataset
-├── images/                     # Dashboard screenshots for preview
-├── Superstore_Executive.pbix  # Main Power BI Desktop file
-└── README.md                   # Project documentation
+├── dataset/                    # Sample Superstore dataset (.csv / .xlsx)
+├── images/                     # High-resolution dashboard screenshots
+│   ├── Superstore_Executive_Intelligence_Hub-1.jpg
+│   ├── Superstore_Executive_Intelligence_Hub-2.jpg
+│   └── Superstore_Executive_Intelligence_Hub-3.jpg
+├── Superstore_Executive_Intelligence_Hub.pbix  # Main Power BI dashboard file
+└── README.md                   # Comprehensive project documentation
